@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: HOTEL-SERVICE
+
+  config:
+    import: optional:configserver:http://localhost:8085
+
   datasource:
     driver-class-name: org.postgresql.Driver
 
@@ -21,15 +25,15 @@ spring:
     show-sql: true
 
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  #    hostname: localhost
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  #    hostname: localhost
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
 
 
 
